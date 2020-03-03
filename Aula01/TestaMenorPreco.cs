@@ -6,16 +6,17 @@ namespace chaosAlgorithmBeginning.Aula01
     {
         public TestaMenorPreco()
         {
-            double[] Precos = new double[5];
-            Precos[0] = 1000000;   
-            Precos[1] = 46000;
-            Precos[2] = 16000;
-            Precos[3] = 46000;
-            Precos[4] = 17000;
+            Produto[] Produtos = new Produto[5] {
+                new Produto("Lamborghini",1000000),
+                new Produto("Jeep", 46000),
+                new Produto("Brasília", 16000),
+                new Produto("Smart", 46000),
+                new Produto("Fusca", 17000)
+            };
 
             int maisBarato = 0;
 
-            #region Lógica pseudo código
+            #region Logica pseudo codigo
             // executa do 0 ate 0 4 inclusive {
             //     se preco atual < preco do mais barato {
             //         mais barato = atual;
@@ -29,13 +30,13 @@ namespace chaosAlgorithmBeginning.Aula01
 
             for (int atual = 0; atual <= 4; atual = atual +1)
             {
-                if (Precos[atual] < Precos[maisBarato]) {
+                if (Produtos[atual].getPreco() < Produtos[maisBarato].getPreco()) {
                     maisBarato = atual;
                 }
             }
 
-            Console.WriteLine($"Carro mais barato: {maisBarato}.");
-            Console.WriteLine($"Valor do carro é: {Precos[maisBarato]}.");
+            Console.WriteLine(maisBarato);
+            Console.WriteLine($"O carro {Produtos[maisBarato].getNome()} é o mais barato, e custa {Produtos[maisBarato].getPreco()}");
         }
     }    
 }
