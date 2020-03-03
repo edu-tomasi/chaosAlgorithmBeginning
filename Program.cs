@@ -1,4 +1,5 @@
 ﻿using System;
+using chaosAlgorithmBeginning.Aula01;
 
 namespace chaosAlgorithmBeginning
 {
@@ -6,7 +7,7 @@ namespace chaosAlgorithmBeginning
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var testaMenorPreco = new TestaMenorPreco();
         }
     }
 }

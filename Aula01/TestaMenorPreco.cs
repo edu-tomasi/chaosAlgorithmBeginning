@@ -14,8 +14,6 @@ namespace chaosAlgorithmBeginning.Aula01
                 new Produto("Fusca", 17000)
             };
 
-            int maisBarato = 0;
-
             #region Logica pseudo codigo
             // executa do 0 ate 0 4 inclusive {
             //     se preco atual < preco do mais barato {
@@ -28,15 +26,24 @@ namespace chaosAlgorithmBeginning.Aula01
             //imprime o preco do mais barato;
             #endregion
 
-            for (int atual = 0; atual <= 4; atual = atual +1)
-            {
-                if (Produtos[atual].getPreco() < Produtos[maisBarato].getPreco()) {
-                    maisBarato = atual;
-                }
-            }
+            int maisBarato = buscarMenor(Produtos);
 
             Console.WriteLine(maisBarato);
             Console.WriteLine($"O carro {Produtos[maisBarato].getNome()} é o mais barato, e custa {Produtos[maisBarato].getPreco()}");
+
+           
         }
+
+        private static int buscarMenor(Produto[] Produtos)
+            {
+                int maisBarato = 0;
+                for (int atual = 0; atual <= 4; atual = atual +1)
+                {  
+                    if (Produtos[atual].getPreco() < Produtos[maisBarato].getPreco()) {
+                        maisBarato = atual;
+                    }
+                }
+                return maisBarato;
+            }
     }    
 }
