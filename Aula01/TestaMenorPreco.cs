@@ -33,19 +33,37 @@ namespace chaosAlgorithmBeginning.Aula01
             int maisBarato = buscarMenor(produtos, 0, 4);
 
             Console.WriteLine(maisBarato);
-            Console.WriteLine($"O carro {produtos[maisBarato].getNome()} é o mais barato, e custa {produtos[maisBarato].getPreco()}");
+            Console.WriteLine($"O carro {produtos[maisBarato].getNome()} é o mais barato, e custa {produtos[maisBarato].getPreco()}.");
+
+            int maisCaro = buscarMaior(produtos, 0, 4);
+            Console.WriteLine(maisCaro);
+            Console.WriteLine($"O carro {produtos[maisCaro].getNome()} é o mais caro, e custa {produtos[maisCaro].getPreco()}.");
         }
 
         private static int buscarMenor(Produto[] produtos, int inicio, int termino)
-            {
-                int maisBarato = inicio;
-                for (int atual = inicio; atual <= termino; atual ++)
-                {  
-                    if (produtos[atual].getPreco() < produtos[maisBarato].getPreco()) {
-                        maisBarato = atual;
-                    }
+        {
+            int maisBarato = inicio;
+            for (int atual = inicio; atual <= termino; atual ++)
+            {  
+                if (produtos[atual].getPreco() < produtos[maisBarato].getPreco()) {
+                    maisBarato = atual;
                 }
-                return maisBarato;
             }
+            return maisBarato;
+        }
+
+        private static int buscarMaior(Produto[] produtos, int inicio, int termino) 
+        {
+            int maisCaro = inicio;
+            for (int atual = inicio; atual <= termino; atual++)
+            {
+                if (produtos[atual].getPreco() > produtos[maisCaro].getPreco())
+                {
+                    maisCaro = atual;
+                }
+            }
+
+            return maisCaro;
+        }
     }    
 }
