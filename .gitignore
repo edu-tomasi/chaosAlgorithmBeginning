@@ -1,2 +1,6 @@
 bin/*
 obj/*
+/.vs/chaosAlgorithmBeginning/v16/Server/sqlite3
+/.vs/chaosAlgorithmBeginning/v16
+/.vs
+/.vscode
